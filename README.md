@@ -1,11 +1,11 @@
-# scalafmt_on_CI
+# Scala formatter on Github Actions CI
 
 ## Description
 
-Implemented scala formatter on CI 
+Implemented native scala formatter for Linux included self-hosted Github Runners on CI. 
 
 
-[Documentation scalafmt](https://scalameta.org/scalafmt/)
+[Documentation scalafmt-native](https://scalameta.org/scalafmt/)
 
 
 [Documentation GitHub Action Path Filter](https://github.com/dorny/paths-filter)
