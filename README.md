@@ -1,0 +1,1 @@
+# scalafmt_on_CI
