@@ -40,8 +40,8 @@ RUN rm -rf /home/github/externals/node12/lib/node_modules/npm && \
     rm /home/github/externals/node16/bin/npm
 
 COPY --chown=github:github ./.scalafmt.conf ./usr/local/bin/.scalafmt.conf
-RUN VERSION=3.4.3 \
-    INSTALL_LOCATION=/usr/local/bin/scalafmt-native \
+RUN VERSION=3.4.3 && \
+    INSTALL_LOCATION=/usr/local/bin/scalafmt-native && \
     curl https://raw.githubusercontent.com/scalameta/scalafmt/master/bin/install-scalafmt-native.sh | \
     && sudo bash -s -- $VERSION $INSTALL_LOCATION
 
