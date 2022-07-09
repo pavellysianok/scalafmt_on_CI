@@ -29,8 +29,8 @@ jobs:
         # In this example changed files will be checked by linter.
         # It doesn't make sense to lint deleted files.
         # Therefore we specify we are only interested in added or modified files.
-        filters: |
-          scala:
+          filters: |
+            scala:
             - added|modified: '**.scala'
     - name: Check for scalafmt conformance
       if: ${{ steps.filter.outputs.scala == 'true' }}
