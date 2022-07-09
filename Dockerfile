@@ -45,4 +45,4 @@ RUN VERSION=3.4.3 && \
     curl https://raw.githubusercontent.com/scalameta/scalafmt/master/bin/install-scalafmt-native.sh | \
     sudo bash -s -- $VERSION $INSTALL_LOCATION
 
-ENTRYPOINT ["/usr/local/bin/scalafmt-native", "-v"]
+ENTRYPOINT ["/usr/local/bin/scalafmt-native", "-h"]
