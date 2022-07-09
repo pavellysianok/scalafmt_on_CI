@@ -1,0 +1,43 @@
+name: Scala formatter
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**.yaml'
+      - '**.yml'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '**.yaml'
+      - '**.yml'
+
+jobs:
+  scalafmt:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 1
+    - uses: dorny/paths-filter@v2
+      id: filter
+      with:
+        # Enable listing of files matching each filter.
+        # Paths to files will be available in `${FILTER_NAME}_files` output variable.
+        # Paths will be escaped and space-delimited.
+        # Output is usable as command-line argument list in Linux shell
+        list-files: shell
+        fetch-depth: 10
+
+        # In this example changed files will be checked by linter.
+        # It doesn't make sense to lint deleted files.
+        # Therefore we specify we are only interested in added or modified files.
+        filters: |
+          yaml:
+            - added|modified: '**.yaml'
+            - added|modified: '**.yml'
+    - name: Check for scalafmt conformance
+      if: ${{ steps.filter.outputs.scala == 'true' }}
+      run: |
+        sudo apt-get install yamllint -y
+        echo "---------------------------------------------------"
+        yamllint ${{ steps.filter.outputs.scala_files }}
