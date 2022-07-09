@@ -1,4 +1,4 @@
-name: Scala formatter
+name: Yaml Linter
 on:
   push:
     branches: [ main ]
@@ -34,7 +34,7 @@ jobs:
             - added|modified: '**.yaml'
             - added|modified: '**.yml'
     - name: Check for scalafmt conformance
-      if: ${{ steps.filter.outputs.scala == 'true' }}
+      if: ${{ steps.filter.outputs.yaml == 'true' }}
       run: |
         sudo apt-get install yamllint -y
         echo "---------------------------------------------------"
