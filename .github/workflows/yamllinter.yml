@@ -38,4 +38,4 @@ jobs:
       run: |
         sudo apt-get install yamllint -y
         echo "---------------------------------------------------"
-        yamllint ${{ steps.filter.outputs.yaml_files }}
+        yamllint ${{ steps.filter.outputs.yaml_files }} -f parsable
