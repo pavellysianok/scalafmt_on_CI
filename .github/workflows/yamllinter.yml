@@ -26,8 +26,6 @@ jobs:
         # Paths will be escaped and space-delimited.
         # Output is usable as command-line argument list in Linux shell
         list-files: shell
-        fetch-depth: 10
-
         # In this example changed files will be checked by linter.
         # It doesn't make sense to lint deleted files.
         # Therefore we specify we are only interested in added or modified files.
@@ -40,4 +38,4 @@ jobs:
       run: |
         sudo apt-get install yamllint -y
         echo "---------------------------------------------------"
-        yamllint ${{ steps.filter.outputs.scala_files }}
+        yamllint ${{ steps.filter.outputs.yaml_files }}
