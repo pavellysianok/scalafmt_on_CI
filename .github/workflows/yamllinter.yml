@@ -42,11 +42,11 @@ jobs:
         yamllint ${{ steps.filter.outputs.yaml_files }} -f parsable
       continue-on-error: true
     - name: Set up Ruby 3.0
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.0  
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.0
     - name: Run YAML-Lint
       env:
           REPORT_ONLY: true
           SHOW_ERRORS: true
-      run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/yaml-lint/master/pipeline.sh)  
+      run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/yaml-lint/master/pipeline.sh)
