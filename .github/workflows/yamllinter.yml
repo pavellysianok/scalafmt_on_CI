@@ -41,3 +41,5 @@ jobs:
         echo "---------------------------------------------------"
         yamllint ${{ steps.filter.outputs.yaml_files }} -f parsable
       continue-on-error: true  
+    - name: Run YAML-Lint
+      run: bash <(curl -s https://raw.githubusercontent.com/CICDToolbox/yaml-lint/master/pipeline.sh)  
