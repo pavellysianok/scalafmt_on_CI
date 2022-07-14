@@ -23,15 +23,14 @@ jobs:
         # Paths to files will be available in `${FILTER_NAME}_files` output variable.
         # Paths will be escaped and space-delimited.
         # Output is usable as command-line argument list in Linux shell
-          list-files: shell
+        list-files: shell
         fetch-depth: 10
-
         # In this example changed files will be checked by linter.
         # It doesn't make sense to lint deleted files.
         # Therefore we specify we are only interested in added or modified files.
           filters: |
-          scala:
-            - added|modified: '**.scala'
+            scala:
+              - added|modified: '**.scala'
     - name: Check for scalafmt conformance
       if: ${{ steps.filter.outputs.scala == 'true' }}
       run: |
