@@ -9,6 +9,11 @@ on:
     paths:
       - '**.scala'
 
+
+
+
+
+
 jobs:
   scalafmt:
     runs-on: ubuntu-latest
