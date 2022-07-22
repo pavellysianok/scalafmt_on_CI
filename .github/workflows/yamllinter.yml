@@ -39,7 +39,7 @@ jobs:
       run: |
         sudo apt-get install yamllint -y
         echo "---------------------------------------------------"
-        yamllint ${{ steps.filter.outputs.yaml_files }} -f parsable
+        yamllint -d rules ${{ steps.filter.outputs.yaml_files }} -f parsable
       continue-on-error: true
     - name: Set up Ruby 3.0
       uses: ruby/setup-ruby@v1
