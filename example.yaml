@@ -14,7 +14,6 @@ on:
 
 
 
-
 jobs:
   scalafmt:
     runs-on: ubuntu-latest
@@ -39,7 +38,7 @@ jobs:
               - added|modified: '**.scala'
     - name: Check for scalafmt conformance
       if: ${{ steps.filter.outputs.scala == 'true' }}
-      run: |
+       run: |
         VERSION=3.5.8
         INSTALL_LOCATION=/usr/bin/scalafmt-native
         curl https://raw.githubusercontent.com/scalameta/scalafmt/master/bin/install-scalafmt-native.sh | \
