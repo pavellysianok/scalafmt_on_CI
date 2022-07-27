@@ -40,7 +40,7 @@ jobs:
       if: ${{ steps.filter.outputs.yaml == 'true' }}
       run: |
         sudo apt-get install yamllint -y
-        echo "---------------------------------------------------"
+        printf ' /\\_/\\\n( o.o )\n > ^ <\n'
         yamllint -c rules.yml ${{ steps.filter.outputs.yaml_files }} -f github
       continue-on-error: true
 
