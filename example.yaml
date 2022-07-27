@@ -13,7 +13,6 @@ on:
 
 
 
-
 jobs:
   scalafmt:
     runs-on: ubuntu-latest
