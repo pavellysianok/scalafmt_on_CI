@@ -2,6 +2,11 @@
 messiness added to it. -mroth */
 package org.scalafmt
 
+
+jhdfjdnjkdfnkjdnfjnd
+
+
+
 sealed abstract class Formatted {
 
   def toEither: Either[Throwable, String] = this match {

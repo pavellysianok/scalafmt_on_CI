@@ -25,7 +25,6 @@ jobs:
         # Output is usable as command-line argument list in Linux shell
         list-files: shell
           fetch-depth: 10 # add extra indent
-
         # In this example changed files will be checked by linter.
         # It doesn't make sense to lint deleted files.
         # Therefore we specify we are only interested in added or modified files.
